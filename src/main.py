@@ -12,6 +12,7 @@ class Flag:
         return self.__value
 
 def main():
+    pntSize = 1
     root = tk.Tk()
     root.title('Star sky')
     windowWidth = root.winfo_screenwidth()
@@ -28,7 +29,7 @@ def main():
         color = '#' + '{0:03x}{1:03x}{2:03x}'.format(red, green, blue)
         x = rand.randint(0, windowWidth)
         y = rand.randint(0, windowHeight)
-        canvas.create_oval(x, y, x+1, y+1, outline=color, fill=color)
+        canvas.create_oval(x, y, x+pntSize, y+pntSize, outline=color, fill=color)
         root.update()
         time.sleep(0.1)
     root.destroy()
