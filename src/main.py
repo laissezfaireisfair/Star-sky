@@ -1,5 +1,6 @@
 import random as rand
 import tkinter as tk
+import time
 
 class Flag:
     __value = False
@@ -29,4 +30,5 @@ def main():
         y = rand.randint(0, windowHeight)
         canvas.create_oval(x, y, x+1, y+1, outline=color, fill=color)
         root.update()
+        time.sleep(0.1)
     root.destroy()
