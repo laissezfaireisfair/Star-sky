@@ -12,10 +12,10 @@ class Flag:
         return self.__value
 
 def main():
-    windowWidth = 800
-    windowHeight = 240
     root = tk.Tk()
     root.title('Star sky')
+    windowWidth = root.winfo_screenwidth()
+    windowHeight = root.winfo_screenheight()
     flag = Flag()
     flag.set_true()
     root.bind('<Key>', flag.set_false)
