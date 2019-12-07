@@ -15,7 +15,7 @@ def main():
     windowWidth = 800
     windowHeight = 240
     root = tk.Tk()
-    root.title = 'Star sky'
+    root.title('Star sky')
     flag = Flag()
     flag.set_true()
     root.bind('<Key>', flag.set_false)
