@@ -17,6 +17,13 @@ def gen_position(windowWidth, windowHeight):
     y = rand.randint(0, windowHeight)
     return (x,y)
 
+def gen_color():
+    red = rand.randint(0, 4095)
+    green = rand.randint(0, 4095)
+    blue = rand.randint(0, 4095)
+    color = '#' + '{0:03x}{1:03x}{2:03x}'.format(red, green, blue)
+    return color
+
 def main():
     pntSize = 1
     root = tk.Tk()
@@ -29,10 +36,7 @@ def main():
     canvas = tk.Canvas(root, width = windowWidth, height = windowHeight)
     canvas.pack()
     while(flag.get()):
-        red = rand.randint(0, 4095)
-        green = rand.randint(0, 4095)
-        blue = rand.randint(0, 4095)
-        color = '#' + '{0:03x}{1:03x}{2:03x}'.format(red, green, blue)
+        color = gen_color()
         (x,y) = gen_position(windowWidth, windowHeight)
         canvas.create_oval(x, y, x+pntSize, y+pntSize, outline=color, fill=color)
         root.update()
