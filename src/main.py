@@ -13,8 +13,8 @@ class Flag:
         return self.__value
 
 def gen_position(windowWidth, windowHeight):
-    x = rand.randint(0, windowWidth)
-    y = rand.randint(0, windowHeight)
+    x = rand.randint(20, windowWidth-20)
+    y = rand.randint(20, windowHeight-20)
     return (x,y)
 
 def gen_color():
