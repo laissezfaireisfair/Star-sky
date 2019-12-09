@@ -3,7 +3,8 @@ import tkinter as tk
 import time
 
 class Flag:
-    __value = False
+    def __init__(self):
+        self.__value = False
     def set_true(self, event=""):
         self.__value = True
     def set_false(self, event=""):
