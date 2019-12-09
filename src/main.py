@@ -12,9 +12,9 @@ class Flag:
     def get(self):
         return self.__value
 
-def gen_position(windowWidth, windowHeight):
-    x = rand.randint(20, windowWidth-20)
-    y = rand.randint(20, windowHeight-20)
+def gen_position(windowWidth, windowHeight, pntSize):
+    x = rand.randint(20, windowWidth-20-pntSize)
+    y = rand.randint(20, windowHeight-20-pntSize)
     return (x,y)
 
 def gen_color():
@@ -38,7 +38,7 @@ def main():
     canvas.pack()
     while(flag.get()):
         color = gen_color()
-        (x,y) = gen_position(windowWidth, windowHeight)
+        (x,y) = gen_position(windowWidth, windowHeight, pntSize)
         canvas.create_oval(x, y, x+pntSize, y+pntSize, outline=color, fill=color)
         root.update()
         time.sleep(0.1)
