@@ -30,6 +30,7 @@ def main():
     root.title('Star sky')
     windowWidth = root.winfo_screenwidth()
     windowHeight = root.winfo_screenheight()
+    root.attributes('-fullscreen', True)
     flag = Flag()
     flag.set_true()
     root.bind('<Key>', flag.set_false)
