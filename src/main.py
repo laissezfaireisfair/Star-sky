@@ -1,6 +1,7 @@
 import random as rand
 import tkinter as tk
 import time
+import math
 
 class Flag:
     def __init__(self):
@@ -13,8 +14,18 @@ class Flag:
         return self.__value
 
 def gen_position(windowWidth, windowHeight):
-    x = rand.randint(0, windowWidth)
-    y = rand.randint(0, windowHeight)
+    center1 = (windowWidth // 4, windowHeight // 2)
+    rad = min(windowWidth // 4, windowHeight // 2)
+    center2 = (center1[0] + rad * 2, center1[1])
+    distX = rand.randint(-rad, rad)
+    maxDistY = int(math.sqrt(rad**2 - distX**2))
+    distY = rand.randint(-maxDistY, maxDistY)
+    if (rand.randint(0, 1) == 0):
+        center = center1
+    else:
+        center = center2
+    x = center[0] + distX
+    y = center[1] + distY
     return (x,y)
 
 def gen_color():
